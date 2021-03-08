@@ -4,6 +4,8 @@ import Cartes.Carte;
 import Cartes.ICarte;
 import Cartes.Symbole;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
@@ -11,8 +13,8 @@ import java.util.stream.Collectors;
 
 public class Grille implements IGrille<Carte> {
 
-    public static final int LARGEUR = 5;
-    public static final int LONGUEUR = 5;
+    public static final int LARGEUR = 4;
+    public static final int LONGUEUR = 4;
     public static final int NB_CARTES = LARGEUR*LONGUEUR;
     public List<Carte> carteList = new ArrayList<>(NB_CARTES);
 
@@ -22,6 +24,11 @@ public class Grille implements IGrille<Carte> {
         }
         Collections.shuffle(carteList);
         this.set(carteList);
+    }
+
+    @Override
+    public Carte get(int i) {
+        return carteList.get(i);
     }
 
     @Override

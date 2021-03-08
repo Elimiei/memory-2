@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface IGrille<T extends ICarte>  {
 
+    public Carte get(int i);
+
     public void pick(int i);
 
     public void del(ICarte carte1, ICarte carte2);
